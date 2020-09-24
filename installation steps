@@ -1,0 +1,5 @@
+
+1- Building the catalog : 
+Script: contrib/gevel/gevel.c
+Function: build_Catalog()
+Command: select build_catalog('randomtable_the_geom_spgist_kd_index’);
