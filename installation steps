@@ -24,3 +24,20 @@ For compilation
 6. Make install
 7. LD_LIBRARY_PATH=/usr/local/pgsql2/bin
 8. export LD_LIBRARY_PATH
+
+
+Extension Shared Library
+
+1- make CFLAGS="-ggdb -O0 -g3 -fno-omit-frame-pointer -g -DDEBUG”   //enable debug
+2- Make install # note: should specify the path of pg_config
+3- psql KNN 
+4- LOAD ‘lib_dir/shared_library_name.so’ ;
+
+ If modify the shared library, 
+-I need to remove it from the lib path, 
+- make CFLAGS="-ggdb -O0 -g3 -fno-omit-frame-pointer -g -DDEBUG”   //enable debug
+-make install
+- restart psql
+-load the library again
+- restart sql again
+- run the required function 
