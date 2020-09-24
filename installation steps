@@ -3,3 +3,19 @@
 Script: contrib/gevel/gevel.c
 Function: build_Catalog()
 Command: select build_catalog('randomtable_the_geom_spgist_kd_index’);
+
+
+# to add support for ordered operator with index scan and distance operator run the following scripts: 
+* OrderedIndexScan.sql  # this script to create the two needed functions 
+* newOrderedOperator.sql. # this script to  create operator and opfamily and …
+* Create new column with the new index over it  of the Customer table  [ULTER TABLE , UPDATE, CREATE INDEX]
+
+For compilation
+1. Create build folder
+2. Go to build folder
+3. Run:  ./../configure --prefix=/usr/local/pgsql2 --enable-cassert --enable-debug CFLAGS="-ggdb -O0 -g3 -fno-omit-frame-pointer -g -DDEBUG" --enable-depend
+4. OR Run: ./../configure --prefix=/Users/princess/Documents/Masters/code/postgresql5/build --with-blocksize=32  --enable-cassert --enable-debug CFLAGS="-ggdb -O0 -g3 -fno-omit-frame-pointer -g -DDEBUG" --enable-depend
+5. Make
+6. Make install
+7. LD_LIBRARY_PATH=/usr/local/pgsql2/bin
+8. export LD_LIBRARY_PATH
